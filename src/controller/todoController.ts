@@ -1,6 +1,7 @@
 import  Plane  from "../models/planeModel";
+import {Request, Response} from "express"
 
-export const getAllPlanes = async (_req: any, res: any) => {
+export const getAllPlanes = async (_req: Request, res: Response) => {
     try {
         res.status(200).send(await Plane.find());
     } catch (error) {
@@ -10,7 +11,7 @@ export const getAllPlanes = async (_req: any, res: any) => {
     
 }
 
-export const createNewPlane = async(req: any, res: any) => {
+export const createNewPlane = async(req: Request, res: Response) => {
     try{
         const response = await Plane.create(req.body);
         res.status(201).json(response);
@@ -22,7 +23,7 @@ export const createNewPlane = async(req: any, res: any) => {
     
 }
 
-export const getPlane = async (req: any, res: any) => {
+export const getPlane = async (req: Request, res: Response) => {
     try {
         const {id} = req.params;
         const response = await Plane.findById(id);
@@ -33,7 +34,7 @@ export const getPlane = async (req: any, res: any) => {
     }
 }
 
-export const deleteProduct = async (req: any, res: any) => {
+export const deleteProduct = async (req: Request, res: Response) => {
     try {
         const {id} = req.params;
         const response = await Plane.deleteOne({_id: id});
@@ -44,7 +45,7 @@ export const deleteProduct = async (req: any, res: any) => {
     }   
 }
 
-export const editProduct = async (req: any, res: any)=> {
+export const editProduct = async (req: Request, res: Response)=> {
     try {
         const {id} = req.params;
         const editplane = req.body;
