@@ -11,9 +11,9 @@ app.use(express.json({limit: "10kb"}));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
 // Setup the CORS
-app.use(cors({
-    origin: "https://angusproductmanagement.netlify.app/",
-}))
+// app.use(cors({
+//     origin: "https://angusproductmanagement.netlify.app/",
+// }))
 
 // Routing
 app.use("/planes", router)
