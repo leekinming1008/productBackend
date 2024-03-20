@@ -4,6 +4,6 @@ import {getAllPlanes, createNewPlane, getPlane, deleteProduct, editProduct} from
 const router = express.Router();
 
 router.route("/").get(getAllPlanes).post(createNewPlane);
-router.route("/:id").get(getPlane).delete(deleteProduct).put(editProduct);
+router.route("/:id").get(getPlane).delete(deleteProduct).put(editProduct).patch(editProduct);
 
 export default router
