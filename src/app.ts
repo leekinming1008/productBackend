@@ -11,7 +11,7 @@ app.use(express.json({limit: "10kb"}));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 
 // Setup the CORS
-var allowlist = ["http://localhost:5174", "https://angusproductmanagement.netlify.app"];
+var allowlist = ["http://localhost:5173", "https://angusproductmanagement.netlify.app"];
 var corsOptionsDelegate = function (req: any, callback: any) {
   var corsOptions;
   if (allowlist.indexOf(req.header("Origin")) !== -1) {
